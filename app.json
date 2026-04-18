@@ -1,29 +1,32 @@
 {
   "expo": {
-    "name": "GoGourmet",
-    "slug": "gogourmet",
+    "name": "GoGourment",
+    "slug": "gogourment",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/logo.png",
+    "icon": "./src/assets/images/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./src/assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/logo.png",
+        "foregroundImage": "./src/assets/images/logo.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.yourname.gogourmet"
+      "package": "com.gogourmet.app"
     },
     "web": {
-      "favicon": "./assets/images/logo.png"
+      "favicon": "./src/assets/images/logo.png"
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
