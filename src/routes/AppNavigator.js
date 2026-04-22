@@ -1,30 +1,14 @@
-import { useEffect, useState } from "react";
-import { ActivityIndicator, View } from "react-native";
-import AppTabs from "./AppTabs";
-import AuthStack from "./AuthStack";
+import { createStackNavigator } from "@react-navigation/stack";
+import LoginScreen from "../screens/LoginScreen";
+import SplashScreen from "../screens/SplashScreen";
 
-export default function RootNavigator() {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+const Stack = createStackNavigator();
 
-  useEffect(() => {
-    // Simulate checking login (replace with Firebase/Auth logic)
-    const checkUser = async () => {
-      const fakeUser = null; // replace with real auth check
-      setUser(fakeUser);
-      setLoading(false);
-    };
-
-    checkUser();
-  }, []);
-
-  if (loading) {
-    return (
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <ActivityIndicator size="large" />
-      </View>
-    );
-  }
-
-  return user ? <AppTabs /> : <AuthStack />;
+export default function AppNavigator() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Splash" component={SplashScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+    </Stack.Navigator>
+  );
 }
